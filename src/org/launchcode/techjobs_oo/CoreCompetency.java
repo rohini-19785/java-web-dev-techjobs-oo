@@ -17,6 +17,21 @@ public class CoreCompetency {
         this.value = value;
     }
 
+    //getter and setter methods:
+
+    public int getId() {
+        return id;
+    }
+
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     // Custom toString, equals, and hashCode methods:
 
     @Override
