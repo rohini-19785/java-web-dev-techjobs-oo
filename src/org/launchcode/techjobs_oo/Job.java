@@ -94,5 +94,65 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    @Override
+    public String toString() {
+
+        String jobName = this.name;
+        if(jobName==null ||jobName.isBlank()==true)
+        {
+            jobName="Data not available";
+        }
+
+        String jobEmployerValue = "Data not available";
+        Employer jobEmployer = this.employer;
+
+        if(jobEmployer!=null && jobEmployer.getValue()!=null&& jobEmployer.getValue().isBlank() == false)
+        {
+            jobEmployerValue = jobEmployer.getValue();
+        }
+
+        String jobLocationValue = "Data not available";
+        Location jobLocation = this.location;
+
+        if(jobLocation!=null && jobLocation.getValue()!=null&& jobLocation.getValue().isBlank() == false)
+        {
+            jobLocationValue = jobLocation.getValue();
+        }
+
+        String jobPositionTypeValue = "Data not available";
+        PositionType jobPositionType = this.positionType;
+
+        if(jobPositionType!=null && jobPositionType.getValue()!=null&& jobPositionType.getValue().isBlank() == false)
+        {
+            jobPositionTypeValue = jobPositionType.getValue();
+        }
+
+        String jobCoreCompetencyValue = "Data not available";
+        CoreCompetency jobCoreCompetency = this.coreCompetency;
+
+        if(jobCoreCompetency!=null && jobCoreCompetency.getValue()!=null&& jobCoreCompetency.getValue().isBlank() == false)
+        {
+            jobCoreCompetencyValue = jobCoreCompetency.getValue();
+        }
+
+        if(jobName.equals("Data not available")
+                && jobEmployerValue.equals("Data not available")
+                && jobLocationValue.equals("Data not available")
+                && jobPositionTypeValue.equals("Data not available")
+                && jobCoreCompetencyValue.equals("Data not available"))
+        {
+            return "OOPS! This job does not seem to exist.";
+        }
+
+        return "\n" +
+                "ID: " + id +
+                "\nName: " +  jobName +
+                "\nEmployer: " + jobEmployerValue +
+                "\nLocation: " + jobLocationValue +
+                "\nPosition Type: " + jobPositionTypeValue +
+                "\nCore Competency: " + jobCoreCompetencyValue +
+                "\n";
+    }
 }
 
