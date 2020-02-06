@@ -20,7 +20,6 @@ public class Job {
     public Job(){
         this.id = nextId;
         nextId++;
-
     }
 
     public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency){
@@ -55,7 +54,7 @@ public class Job {
     public int getId() {
         return id;
     }
-    
+
 
     public String getName() {
         return name;
